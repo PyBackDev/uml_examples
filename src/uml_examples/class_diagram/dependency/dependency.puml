@@ -1,0 +1,16 @@
+@startuml
+
+class Monitor {
+  +turn_on(): void
+  +turn_off(): void
+}
+
+class PowerSwitch {
+  -is_on: bool
+  +PowerSwitch()
+  +toggle(power_switch: Monitor): void
+}
+
+PowerSwitch --> Monitor : toggle()
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+class File {
+  +__init__(filename: str)
+  +open(): void
+  +close(): void
+}
+
+class FileLogger {
+  -file: File
+  +__init__(filename: str)
+  +write(message: str): void
+}
+
+FileLogger *-- File : contains
+
+@enduml

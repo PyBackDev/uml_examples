@@ -1,0 +1,21 @@
+@startuml
+class DatabaseConnection {
+  -connection_url: str
+  -username: str
+  -password: str
+  +DatabaseConnection(connection_url: str, username: str, password: str)
+  +connect(): void
+  +disconnect(): void
+}
+
+class PostgreSQLDatabase {
+  +PostgreSQLDatabase(connection_url: str, username: str, password: str)
+}
+
+class MySQLDatabase {
+  +MySQLDatabase(connection_url: str, username: str, password: str)
+}
+
+DatabaseConnection <|-- PostgreSQLDatabase
+DatabaseConnection <|-- MySQLDatabase
+@enduml

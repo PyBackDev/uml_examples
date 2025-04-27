@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Subject {
+  +attach(observer: Observer): void
+  +detach(observer: Observer): void
+  +notify(): void
+}
+
+class ConcreteSubject {
+  -_state: int
+  -_observers: List[Observer]
+  +attach(observer: Observer): void
+  +detach(observer: Observer): void
+  +notify(): void
+  +some_business_logic(): void
+}
+
+interface Observer {
+  +update(subject: Subject): void
+}
+
+class ConcreteObserverA {
+  +update(subject: Subject): void
+}
+
+class ConcreteObserverB {
+  +update(subject: Subject): void
+}
+
+Subject <|-- ConcreteSubject
+Observer <|.. ConcreteObserverA
+Observer <|.. ConcreteObserverB
+ConcreteSubject o--> Observer : _observers
+
+@enduml

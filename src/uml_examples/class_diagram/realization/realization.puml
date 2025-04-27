@@ -1,0 +1,25 @@
+@startuml
+!define ABSTRACT abstract
+
+interface Connection {
+  +connect()
+  +disconnect()
+}
+
+ABSTRACT class DatabaseConnection {
+  -connection_url: str
+  -username: str
+  -password: str
+  +DatabaseConnection(connection_url: str, username: str, password: str)
+  +connect()
+  +disconnect()
+}
+
+class PostgreSQLDatabase {
+  +PostgreSQLDatabase(connection_url: str, username: str, password: str)
+}
+
+Connection <|.. DatabaseConnection
+DatabaseConnection <|-- PostgreSQLDatabase
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+class Person {
+  +__init__(name: str)
+  +drive(car: Car): void
+}
+
+class Car {
+  +__init__(make: str, model: str)
+}
+
+Person --> Car : uses
+
+@enduml

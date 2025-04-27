@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "uml_examples"
+dynamic = ["version"]
+description = "The repository contains examples of using UML diagrams"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+    { name = "PyBackDev", email = "evbalbukova@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/PyBackDev/uml_examples#readme"
+Source = "https://github.com/PyBackDev/uml_examples"
+
+[tool.hatch.version]
+path = "src/uml_examples/__about__.py"
+
+[tool.hatch.envs.style]
+detached = true
+dependencies = ["mypy", "ruff"]
+
+[tool.hatch.envs.style.scripts]
+lint = "mypy . && ruff check --fix ."
+
+[tool.ruff]
+line-length = 79
