@@ -15,18 +15,18 @@ git clone git@github.com:PyBackDev/uml_examples.git
 ```
 
 2. Install hatch package manager
-```python
+```console
 pip install hatch
 ```
 
 3. Set up environment
-```python
+```console
 hatch env create style
 hatch shell style
 ```
 
 4. Run code check
-```python
+```console
 hatch run style:lint
 ```
 
